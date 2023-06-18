@@ -19,7 +19,12 @@ export const QuestionItem = ({ question }) => {
       <p>{difficulty}</p>
       <p>{answerRate}</p>
       <p>{totalAnswers}</p>
-      <Link href="/card" id={id} state={{ id }} className={styles.styledLink}>
+      <Link
+        // href='/card'
+        href={`/card?id=${id}`}
+        state={{ question }}
+        className={styles.styledLink}
+      >
         <RiPencilLine size={28} />
       </Link>
       <button

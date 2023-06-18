@@ -5,8 +5,13 @@ import { useState } from "react";
 import styles from "./QuestionForm.module.css";
 import Button from "../Button";
 import { useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
 export const QuestionForm = () => {
+    const searchParams = useSearchParams();
+
+    const questId = searchParams.get("id");
+    console.log(questId);
   const [id, setId] = useState("");
   const [topic, setTopic] = useState("");
   const [questionName, setQuestionName] = useState("");

@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import styles from "./LoginForm.module.css"
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { setUser } from "@/app/GlobalRedux/userSlice";
+import { useDispatch } from "react-redux";
 
 export const loginSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Enter your email"),
@@ -19,11 +21,13 @@ const initialValues = {
 };
 
 export const LoginForm = () => {
-    const router = useRouter();
+  const router = useRouter();
+  const dispatch = useDispatch();
+
     const handleSubmit = (values, actions) => {
     console.log(values, actions);
 
-    // dispatch(setUser(values));
+    dispatch(setUser(values));
     actions.setSubmitting(false);
     actions.resetForm();
     router.push("/");

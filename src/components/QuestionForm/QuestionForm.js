@@ -6,12 +6,15 @@ import styles from "./QuestionForm.module.css";
 import Button from "../Button";
 import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
+import { useDispatch } from "react-redux";
+import { addQuestion } from "@/app/GlobalRedux/questionsSlice";
 
 export const QuestionForm = () => {
-    const searchParams = useSearchParams();
+  const searchParams = useSearchParams();
 
-    const questId = searchParams.get("id");
-    console.log(questId);
+  const questId = searchParams.get("id");
+  console.log(questId);
+
   const [id, setId] = useState("");
   const [topic, setTopic] = useState("");
   const [questionName, setQuestionName] = useState("");
@@ -24,6 +27,7 @@ export const QuestionForm = () => {
     setQuestionContent(e.currentTarget.value);
     
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -35,6 +39,7 @@ export const QuestionForm = () => {
       questionContent,
     };
     console.log(newQuestion);
+      dispatch(addQuestion(newQuestion));
     reset();
     router.push("/");
   };

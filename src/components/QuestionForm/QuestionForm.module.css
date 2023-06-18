@@ -1,0 +1,38 @@
+.styledForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 360px;
+  padding: var(--space-md);
+  font-size: var(--s-fontSize);
+  font-weight: 400;
+}
+  
+.styledForm input {
+    width: 220px;
+    border: var(--border-normal);
+    border-radius: var(--border-radius-sm);
+    background-color: var(--grey-color);
+    height: 32px;
+}
+
+.contentInput {
+  width: 100%;
+  height: 140px;
+  resize: none;
+  border: var(--border-normal);
+    border-radius: var(--border-radius-lg);
+  background-color:  var(--grey-color);
+  margin-bottom: var(--space-lg);
+  padding: var(--space-sm);;
+}
+
+.buttonWrapper {
+    display: flex;
+  gap: 24px;
+}
+  
+.buttonWrapper button[type='button'] {
+    background-color: var(--redLight-color);
+    border-color: var(--redDark-color);
+}

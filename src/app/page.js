@@ -5,7 +5,6 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main>
       <Container>
         <Link
           href="/card"
@@ -15,6 +14,5 @@ export default function Home() {
         </Link>
         home
       </Container>
-    </main>
   );
 }

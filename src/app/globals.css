@@ -20,7 +20,9 @@
   --border-none: none;
   --border-normal: 1px solid;
 
+  --space-sm: 8px;
   --space-md: 16px;
+  --space-lg: 32px;
 }
 
 * {

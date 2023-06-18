@@ -1,16 +1,26 @@
 :root {
-  --border-radius: 12px;
   --black-color: #010101;
   --white-color: #fff;
   --greenLight-color: #aafbbe;
   --greenDark-color: #4caf50;
   --redLight-color: #fed3e2;
   --redDark-color: #ff197b;
-
   --grey-color: #f3f3f3;
   --primaryText-color: #212121;
 
-  
+  --xs-fontSize: 12px;
+  --s-fontSize: 14px;
+  --m-fontSize: 16px;
+
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 16px;
+  --border-radius-round: 50%;
+
+  --border-none: none;
+  --border-normal: 1px solid;
+
+  --space-md: 16px;
 }
 
 * {
@@ -31,7 +41,10 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale
+}
+
+body main {
   padding-top: 20px;
 }
 
@@ -43,4 +56,46 @@ a {
 ul, li, p {
   margin: 0;
   padding: 0;
+}
+
+.wrapper {
+  width: 100%;
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+  margin: 0 auto;
+  @media screen and (min-width: 480px) {
+    max-width: 1200px;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 60px;
+  border: var(--border-normal);
+  border-radius: var(--border-radius-round);
+  text-transform: uppercase;
+  margin: 0 auto;
+}
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 152px;
+  height: 32px;
+  cursor: pointer;
+  outline: none;
+  padding: 12px 20px;
+  background-color: var(--greenLight-color);
+  color: var(--black-color);
+  border: var(--border-normal);
+  border-radius: var(--border-radius-sm);
+  border-color: var(--greenDark-color);
+
+  &:hover {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  }
 }

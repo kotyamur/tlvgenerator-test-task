@@ -1,0 +1,27 @@
+.styledLink {
+  margin-left: auto;
+  width: 40px;
+  color:  var(--primaryText-color);
+  text-align: center;
+}
+
+.styledLink:hover {
+  color:  var(--greenDark-color);
+}
+
+.deleteButton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  outline: none;
+  background-color: #fff;
+  border: none;
+  margin-right: var(--space-md);
+}
+
+.deleteButton:hover {
+    color: var(--redDark-color);
+}

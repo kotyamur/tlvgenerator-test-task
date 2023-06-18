@@ -5,7 +5,6 @@ import Logo from "@/components/Logo";
 export default function Login() {
   return (
       <Container>
-        Login
         <Logo />
         <LoginForm />
       </Container>

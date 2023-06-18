@@ -1,3 +1,21 @@
-/* .main {
-  padding-top: 20px;
-} */
+.listForm {
+  display: flex;
+  flex-direction: column;
+  border: var(--border-normal);
+  border-radius: var(--border-radius-sm);
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 60px;
+}
+
+.listItem > p {
+  width: calc((100% - 4px * 6) / 7);
+  text-align: center;
+}
+.listItem:not(:last-child) {
+  border-bottom: var(--border-normal);
+}

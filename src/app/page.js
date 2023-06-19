@@ -6,34 +6,13 @@ import Button from "@/components/Button";
 import Link from "next/link";
 import { QuestionItem } from "@/components/QuestionItem/QuestionItem";
 import { useSelector } from "react-redux";
-import { useRouter } from "next/navigation";
-
-// const questions = [
-//   {
-//     id: "AF79C",
-//     topic: "Anatomy",
-//     questionName: "2.1 Basics",
-//     difficulty: 88,
-//     answerRate: "75%",
-//     totalAnswers: 1156,
-//     questionContent: "",
-//   },
-//   {
-//     id: "AF78C",
-//     topic: "Anatomy",
-//     questionName: "2.1 Basics",
-//     difficulty: 89,
-//     answerRate: "73%",
-//     totalAnswers: 1156,
-//     questionContent: "",
-//   },
-// ];
+import { redirect } from "next/navigation";
 
 export default function Home() {
   const isUserLogined = useSelector((state) => state.user.isLogined);
-  const router = useRouter();
+
   if (!isUserLogined) {
-    router.push("/login");
+    redirect("/login");
   }
   const questions = useSelector((state) => state.questions);
   return (

@@ -73,7 +73,7 @@ export const LoginForm = () => {
         Login
       </button>
       <p className={styles.linkToRegister}>
-        Don't have an account? <Link href="/register">Sign up</Link>
+        Do not have an account? <Link href="/register">Sign up</Link>
       </p>
     </form>
   );

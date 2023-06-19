@@ -3,13 +3,16 @@
 import { RiDeleteBin6Line, RiPencilLine } from "react-icons/ri";
 import styles from "./QuestionItem.module.css";
 import Link from "next/link";
+import { useDispatch } from "react-redux";
+import { deleteQuestion } from "@/app/GlobalRedux/questionsSlice";
 
 export const QuestionItem = ({ question }) => {
+
   const { id, topic, questionName, difficulty, answerRate, totalAnswers } =
     question;
   console.log(id, topic, questionName, difficulty, answerRate, totalAnswers);
-
-  const handleDelete = () => console.log("delete");
+  const dispatch = useDispatch;
+  const handleDelete = () => dispatch(deleteQuestion(id));
 
   return (
     <>

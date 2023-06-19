@@ -7,18 +7,26 @@ import Button from "../Button";
 import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
 import { useDispatch } from "react-redux";
-import { addQuestion } from "@/app/GlobalRedux/questionsSlice";
+import { addQuestion, editQuestion } from "@/app/GlobalRedux/questionsSlice";
+import { useSelector } from "react-redux";
 
 export const QuestionForm = () => {
   const searchParams = useSearchParams();
+  const questions = useSelector((state) => state.questions);
 
   const questId = searchParams.get("id");
-  console.log(questId);
+      const questionById = questions.find(
+        (question) => question.id === questId
+        );
 
-  const [id, setId] = useState("");
-  const [topic, setTopic] = useState("");
-  const [questionName, setQuestionName] = useState("");
-  const [questionContent, setQuestionContent] = useState("");
+  const [id, setId] = useState(questionById?.id || "");
+  const [topic, setTopic] = useState(questionById?.topic || "");
+  const [questionName, setQuestionName] = useState(
+    questionById?.questionName || ""
+  );
+  const [questionContent, setQuestionContent] = useState(
+    questionById?.questionContent || ""
+  );
 
   const handleChangeId = (e) => setId(e.currentTarget.value);
   const handleChangeTopic = (e) => setTopic(e.currentTarget.value);
@@ -39,7 +47,12 @@ export const QuestionForm = () => {
       questionContent,
     };
     console.log(newQuestion);
+    if (questId) {
+      console.log(questId);
+      dispatch(editQuestion(newQuestion));
+    } else {
       dispatch(addQuestion(newQuestion));
+    }
     reset();
     router.push("/");
   };

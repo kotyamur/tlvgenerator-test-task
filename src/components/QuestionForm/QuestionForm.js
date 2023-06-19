@@ -46,9 +46,7 @@ export const QuestionForm = () => {
       questionName,
       questionContent,
     };
-    console.log(newQuestion);
     if (questId) {
-      console.log(questId);
       dispatch(editQuestion(newQuestion));
     } else {
       dispatch(addQuestion(newQuestion));

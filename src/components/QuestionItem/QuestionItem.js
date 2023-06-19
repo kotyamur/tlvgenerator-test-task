@@ -10,8 +10,7 @@ export const QuestionItem = ({ question }) => {
 
   const { id, topic, questionName, difficulty, answerRate, totalAnswers } =
     question;
-  console.log(id, topic, questionName, difficulty, answerRate, totalAnswers);
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
   const handleDelete = () => dispatch(deleteQuestion(id));
 
   return (

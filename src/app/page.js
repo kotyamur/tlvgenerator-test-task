@@ -33,7 +33,6 @@ export default function Home() {
   const isUserLogined = useSelector((state) => state.user.isLogined);
   const router = useRouter();
   if (!isUserLogined) {
-    console.log(isUserLogined);
     router.push("/login");
   }
   const questions = useSelector((state) => state.questions);

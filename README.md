@@ -1,8 +1,16 @@
+# I present to your attention a small application for creating a list of questions.
+
+To work, you will first need to log in, and then you will get to the page of the list of all questions, where there will already be an example of some questions that you can delete and use the "create new" button to create new questions.
+You can also edit your questions.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## To run the project locally on your computer
 
-First, run the development server:
+ - Make sure you have an LTS version of Node.js installed on your computer. Download and install if needed.
+ - Clone this repository.
+ - Install the project's base dependencies
+ - Run the development server:
 
 ```bash
 npm run dev
@@ -13,10 +21,6 @@ pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
 ## Learn More
 

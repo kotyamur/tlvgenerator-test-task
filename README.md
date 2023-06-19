@@ -7,7 +7,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## To run the project locally on your computer
 
- - Make sure you have an LTS version of Node.js installed on your computer. Download and install if needed.
+ - Make sure you have a 16.8 or later version of Node.js installed on your computer. Download and install if needed.
  - Clone this repository.
  - Install the project's base dependencies
  - Run the development server:
